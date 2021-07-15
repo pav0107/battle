@@ -21,7 +21,7 @@ describe Player do
     it { is_expected.to respond_to :reduce_HP }
 
     it "reduces Karim's hit points by 10" do
-      Game.new.attack(karim)
+      Game.new(pav, karim).attack(karim)
       expect(karim.hit_points).to eq 50
     end
   end
