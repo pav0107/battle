@@ -1,4 +1,5 @@
 require 'player'
+require 'game'
 
 describe Player do
   subject(:pav) { Player.new('Pav') }
@@ -10,10 +11,6 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it { is_expected.to respond_to :attack }
-  end
-
   describe '#hit_points' do
     it 'returns hit points' do
       expect(pav.hit_points).to eq 60
@@ -22,12 +19,10 @@ describe Player do
 
   describe '#reduce_HP' do
     it { is_expected.to respond_to :reduce_HP }
-    
+
     it "reduces Karim's hit points by 10" do
-      pav.attack(karim)
+      Game.new.attack(karim)
       expect(karim.hit_points).to eq 50
     end
   end
-
-
 end

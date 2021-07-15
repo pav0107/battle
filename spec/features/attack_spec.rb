@@ -1,5 +1,5 @@
-RSpec.feature "Attack player" do
-  scenario "attack player 2" do
+RSpec.feature 'Attack player' do
+  scenario 'attack player 2' do
     sign_in_and_play
     click_link 'Attack'
     expect(page).to have_content('Karim has attacked Pav!')
@@ -10,5 +10,4 @@ RSpec.feature "Attack player" do
     click_link 'Attack'
     expect(page).to have_content("Karim reduced Pav's HP to 50!")
   end
-
 end
